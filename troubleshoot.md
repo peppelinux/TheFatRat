@@ -18,6 +18,9 @@ After this point and when finished , all the remains of your faulty mingw instal
 After this point , execute ./setup.sh on fatrat folder , so mingw packages could be correctly installed in your linux
 from the Kali repositories .
 
+- If you recently installed fatrat then you probably will have an issue with powerstager with error I/O when it tries to write the backdoor output file , to solve that issue you must add debian jessie repositories to your file /etc/apt/sources.list and deisable any new repository there , then uninstall and remove your current mingw instalation and run setup.sh from fatrat again .
+* - look here https://github.com/Screetsec/TheFatRat/issues/391
+
 ## Manual install in parrot 
 
 go to https://packages.debian.org/jessie/all/mingw32 and download the package at the bottom of the page. When it downloads, right click it and click Open with GDebi Package Installer, then install it. Do the same for https://packages.debian.org/jessie/all/mingw32-binutils
@@ -25,11 +28,9 @@ go to https://packages.debian.org/jessie/all/mingw32 and download the package at
 then run ./setup.py again. FatRat will install in Parrot.
 
 ## This procedure is the same for all other packages that may give an error on output as (Not OK) , except these ones :
-- proguard
 - dx (from android sdk)
 - aapt (from android sdk)
 - apktool
-- dex2jar
 * these packages come in fatrat instalation folder .
 #-------------------------------------------------------------------------------------#
 
@@ -55,6 +56,9 @@ backdoor-apk was denvelopen by :
 ## Running powerstager you get he message (names not found)
 The solution is to install names python module by running in your terminal ( pip install names)
 
+## Running Powerstager you get the message (IOError: [Errno 2] No such file or directory: )
+the solution for this problem is to downgrade your mingw packages , check this topic : 
+https://github.com/Screetsec/TheFatRat/issues/391
 
 ## Package exact names installed by fatart during setup :
 
